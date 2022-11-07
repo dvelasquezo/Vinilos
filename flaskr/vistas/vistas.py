@@ -56,7 +56,7 @@ class VistaCanciones3(Resource):
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
     
-    class VistaCanciones4(Resource):
+class VistaCanciones4(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -72,7 +72,7 @@ class VistaCanciones3(Resource):
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
     
-    class VistaCanciones5(Resource):
+class VistaCanciones5(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -88,7 +88,7 @@ class VistaCanciones3(Resource):
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
     
-    class VistaCanciones6(Resource):
+class VistaCanciones6(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -104,7 +104,7 @@ class VistaCanciones3(Resource):
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
     
-    class VistaCanciones7(Resource):
+class VistaCanciones7(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -119,38 +119,7 @@ class VistaCanciones3(Resource):
         usuario = Usuario.query.get_or_404(id_usuario)
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
-    class VistaCanciones8(Resource):
-    #Se modifica el servicio de post de canciones para que se asocien a los usuarios
-    @jwt_required()
-    def post(self, id_usuario):
-        usuario = Usuario.query.get_or_404(id_usuario)
-        nueva_cancion = Cancion(titulo=request.json["titulo"], minutos=request.json["minutos"], segundos=request.json["segundos"], interprete=request.json["interprete"])
-        usuario.canciones.append(nueva_cancion)
-        db.session.commit()
-        return cancion_schema.dump(nueva_cancion)
-    #Se modifica el servicio de get de canciones para que traiga las canciones del usuario en sesion
-    @jwt_required()
-    def get(self, id_usuario):
-        usuario = Usuario.query.get_or_404(id_usuario)
-        return [cancion_schema.dump(al) for al in usuario.canciones]
-    
-    
-    class VistaCanciones9(Resource):
-    #Se modifica el servicio de post de canciones para que se asocien a los usuarios
-    @jwt_required()
-    def post(self, id_usuario):
-        usuario = Usuario.query.get_or_404(id_usuario)
-        nueva_cancion = Cancion(titulo=request.json["titulo"], minutos=request.json["minutos"], segundos=request.json["segundos"], interprete=request.json["interprete"])
-        usuario.canciones.append(nueva_cancion)
-        db.session.commit()
-        return cancion_schema.dump(nueva_cancion)
-    #Se modifica el servicio de get de canciones para que traiga las canciones del usuario en sesion
-    @jwt_required()
-    def get(self, id_usuario):
-        usuario = Usuario.query.get_or_404(id_usuario)
-        return [cancion_schema.dump(al) for al in usuario.canciones]
-    
-    class VistaCanciones10(Resource):
+class VistaCanciones8(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -166,7 +135,7 @@ class VistaCanciones3(Resource):
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
     
-    class VistaCanciones11(Resource):
+class VistaCanciones9(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -181,7 +150,7 @@ class VistaCanciones3(Resource):
         usuario = Usuario.query.get_or_404(id_usuario)
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
-    class VistaCanciones12(Resource):
+class VistaCanciones10(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -196,7 +165,8 @@ class VistaCanciones3(Resource):
         usuario = Usuario.query.get_or_404(id_usuario)
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
-    class VistaCanciones13(Resource):
+    
+class VistaCanciones11(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -211,7 +181,7 @@ class VistaCanciones3(Resource):
         usuario = Usuario.query.get_or_404(id_usuario)
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
-    class VistaCanciones14(Resource):
+class VistaCanciones12(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
@@ -226,7 +196,37 @@ class VistaCanciones3(Resource):
         usuario = Usuario.query.get_or_404(id_usuario)
         return [cancion_schema.dump(al) for al in usuario.canciones]
     
-    class VistaCanciones15(Resource):
+class VistaCanciones13(Resource):
+    #Se modifica el servicio de post de canciones para que se asocien a los usuarios
+    @jwt_required()
+    def post(self, id_usuario):
+        usuario = Usuario.query.get_or_404(id_usuario)
+        nueva_cancion = Cancion(titulo=request.json["titulo"], minutos=request.json["minutos"], segundos=request.json["segundos"], interprete=request.json["interprete"])
+        usuario.canciones.append(nueva_cancion)
+        db.session.commit()
+        return cancion_schema.dump(nueva_cancion)
+    #Se modifica el servicio de get de canciones para que traiga las canciones del usuario en sesion
+    @jwt_required()
+    def get(self, id_usuario):
+        usuario = Usuario.query.get_or_404(id_usuario)
+        return [cancion_schema.dump(al) for al in usuario.canciones]
+    
+class VistaCanciones14(Resource):
+    #Se modifica el servicio de post de canciones para que se asocien a los usuarios
+    @jwt_required()
+    def post(self, id_usuario):
+        usuario = Usuario.query.get_or_404(id_usuario)
+        nueva_cancion = Cancion(titulo=request.json["titulo"], minutos=request.json["minutos"], segundos=request.json["segundos"], interprete=request.json["interprete"])
+        usuario.canciones.append(nueva_cancion)
+        db.session.commit()
+        return cancion_schema.dump(nueva_cancion)
+    #Se modifica el servicio de get de canciones para que traiga las canciones del usuario en sesion
+    @jwt_required()
+    def get(self, id_usuario):
+        usuario = Usuario.query.get_or_404(id_usuario)
+        return [cancion_schema.dump(al) for al in usuario.canciones]
+    
+class VistaCanciones15(Resource):
     #Se modifica el servicio de post de canciones para que se asocien a los usuarios
     @jwt_required()
     def post(self, id_usuario):
